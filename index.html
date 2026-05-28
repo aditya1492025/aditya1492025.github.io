@@ -9,12 +9,18 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <!-- Performance: Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/favicon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Google Fonts with font-display=swap for better LCP -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,6 +33,81 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Critical CSS for above-the-fold (LCP optimization) -->
+  <style>
+    body {
+      font-family: "Open Sans", sans-serif;
+      background-color: #040404;
+      color: #fff;
+      position: relative;
+      background: transparent;
+    }
+    
+    body::before {
+      content: "";
+      position: fixed;
+      background: #040404;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 100vh;
+      z-index: -1;
+    }
+    
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    
+    #header {
+      transition: ease-in-out 0.3s;
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      z-index: 997;
+      overflow-y: auto;
+    }
+    
+    #header h1 {
+      font-size: 48px;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      font-weight: 700;
+      font-family: "Poppins", sans-serif;
+    }
+    
+    #header h1 a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    #header h2 {
+      font-size: 24px;
+      margin-top: 20px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    #header h2 span {
+      color: #fff;
+      border-bottom: 2px solid #18d26e;
+    }
+    
+    @media (max-width: 992px) {
+      #header h1 {
+        font-size: 36px;
+      }
+      #header h2 {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -92,7 +173,7 @@
       </div>
       <div class="row">
         <div class="col-lg-2" data-aos="fade-right">
-          <img src="assets/img/ssgmce-logo.png" class="img-fluid" alt="SSGMCE logo">
+          <img src="assets/img/ssgmce-logo.png" class="img-fluid" alt="SSGMCE logo" loading="lazy">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-5 content" data-aos="fade-left">
         <h3><strong>Bachelor of Engineering in Computer Science</strong></h3>
@@ -121,50 +202,50 @@
         <h3><strong>Programming Languages</strong></h3>
         <div class="col-lg-1" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/python.png" class="img-fluid" alt="Python Language logo">
+            <img src="assets/img/logos/python.png" class="img-fluid" alt="Python Language logo" loading="lazy">
             <figcaption>Python</figcaption>
           </figure>
         </div>
 
         <div class="col-lg-1" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/java.png" class="img-fluid" alt="Java Language logo">
+            <img src="assets/img/logos/java.png" class="img-fluid" alt="Java Language logo" loading="lazy">
             <figcaption>Java</figcaption>
           </figure>
         </div>
         <div class="col-lg-1" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/c.png" class="img-fluid" alt="C Language logo">
+            <img src="assets/img/logos/c.png" class="img-fluid" alt="C Language logo" loading="lazy">
             <figcaption>C</figcaption>
           </figure>
         </div>
         <div class="col-lg-1" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/c++.png" class="img-fluid" alt="C++ Language logo">
+            <img src="assets/img/logos/c++.png" class="img-fluid" alt="C++ Language logo" loading="lazy">
             <figcaption>C++</figcaption>
           </figure>
         </div>
         <div class="col-lg-1" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/mysql.png" class="img-fluid" alt="SQL logo">
+            <img src="assets/img/logos/mysql.png" class="img-fluid" alt="SQL logo" loading="lazy">
             <figcaption>SQL</figcaption>
           </figure>
         </div>
         <div class="col-lg-1" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/js.png" class="img-fluid" alt="JavaScript logo">
+            <img src="assets/img/logos/js.png" class="img-fluid" alt="JavaScript logo" loading="lazy">
             <figcaption>JavaScript</figcaption>
           </figure>
         </div>
         <div class="col-lg-1" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/html.png" class="img-fluid" alt="HTML logo">
+            <img src="assets/img/logos/html.png" class="img-fluid" alt="HTML logo" loading="lazy">
             <figcaption>HTML</figcaption>
           </figure>
         </div>
         <div class="col-lg-1" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/css.png" class="img-fluid" alt="CSS logo">
+            <img src="assets/img/logos/css.png" class="img-fluid" alt="CSS logo" loading="lazy">
             <figcaption>CSS</figcaption>
           </figure>
         </div>
@@ -173,37 +254,37 @@
         <h3><strong>Mobile & Frameworks</strong></h3>
         <div class="col-lg-1" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/git.png" class="img-fluid" alt="Git">
+            <img src="assets/img/logos/git.png" class="img-fluid" alt="Git" loading="lazy">
             <figcaption>Git</figcaption>
           </figure>
         </div>
         <div class="col-lg-2" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/flutter.png" class="img-fluid" alt="Flutter">
+            <img src="assets/img/logos/flutter.png" class="img-fluid" alt="Flutter" loading="lazy">
             <figcaption>Flutter</figcaption>
           </figure>
         </div>
         <div class="col-lg-1" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/firebase.png" class="img-fluid" alt="Firebase">
+            <img src="assets/img/logos/firebase.png" class="img-fluid" alt="Firebase" loading="lazy">
             <figcaption>Firebase</figcaption>
           </figure>
         </div>
         <div class="col-lg-2" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/docker.png" class="img-fluid" alt="Docker">
+            <img src="assets/img/logos/docker.png" class="img-fluid" alt="Docker" loading="lazy">
             <figcaption>Docker</figcaption>
           </figure>
         </div>
         <div class="col-lg-2" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/gcp.png" class="img-fluid" alt="Google Cloud">
+            <img src="assets/img/logos/gcp.png" class="img-fluid" alt="Google Cloud" loading="lazy">
             <figcaption>GCP</figcaption>
           </figure>
         </div>
         <div class="col-lg-1" data-aos="fade-right">
           <figure class="text-center">
-            <img src="assets/img/logos/vscode.png" class="img-fluid" alt="VS Code">
+            <img src="assets/img/logos/vscode.png" class="img-fluid" alt="VS Code" loading="lazy">
             <figcaption>VS Code</figcaption>
           </figure>
         </div>
@@ -221,7 +302,7 @@
     
     <div class="row">
       <div class="col-lg-2 py-5" data-aos="fade-right">
-        <img src="assets/img/nrsc-logo.jpeg" class="img-fluid" alt="ISRO logo">
+        <img src="assets/img/nrsc-logo.jpeg" class="img-fluid" alt="ISRO logo" loading="lazy">
       </div>
       <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
       <h4><strong>Student Intern - Geospatial Intelligence</strong></h4>
@@ -238,7 +319,7 @@
       </div>
       <p></p>
       <div class="col-lg-2 py-5" data-aos="fade-right">
-        <img src="assets/img/rail.png" class="img-fluid" alt="Railways logo">
+        <img src="assets/img/rail.png" class="img-fluid" alt="Railways logo" loading="lazy">
       </div>
       <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
       <h4><strong>App Developer Intern</strong></h4>
@@ -254,7 +335,7 @@
       </div>
       <p></p>
       <div class="col-lg-2 py-5" data-aos="fade-right">
-        <img src="assets/img/crea-logo.png" class="img-fluid" alt="CREA logo">
+        <img src="assets/img/crea-logo.png" class="img-fluid" alt="CREA logo" loading="lazy">
       </div>
       <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
       <h4><strong>Full Stack Developer Intern</strong></h4>
@@ -410,18 +491,18 @@
   </div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/particles.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/particles.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
 
 </body>
 
