@@ -3,7 +3,7 @@ particlesJS('particles-js',
   {
     "particles": {
       "number": {
-        "value": window.innerWidth < 768 ? 30 : 80,
+        "value": window.innerWidth < 768 ? 15 : 80,
         "density": {
           "enable": true,
           "value_area": 800
@@ -56,7 +56,7 @@ particlesJS('particles-js',
       },
       "move": {
         "enable": true,
-        "speed": window.innerWidth < 768 ? 3 : 6,
+        "speed": window.innerWidth < 768 ? 1.5 : 6,
         "direction": "none",
         "random": false,
         "straight": false,
@@ -72,11 +72,11 @@ particlesJS('particles-js',
       "detect_on": "canvas",
       "events": {
         "onhover": {
-          "enable": window.innerWidth >= 768,
+          "enable": window.innerWidth >= 992,
           "mode": "repulse"
         },
         "onclick": {
-          "enable": true,
+          "enable": false,
           "mode": "push"
         },
         "resize": true
