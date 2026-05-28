@@ -19,8 +19,12 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/favicon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts with font-display=optional to reduce CLS -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=optional" rel="stylesheet">
+  <!-- Preload critical font weights to avoid render-blocking -->
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX5PgLN.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v21/pxiEyp8kv8JsRG1Ks-Q5WYc.woff2" type="font/woff2" crossorigin>
+  
+  <!-- Google Fonts CSS with swap for fast display -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
 
 
 
